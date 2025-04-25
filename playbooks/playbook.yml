@@ -40,3 +40,17 @@
     
   roles:
     - ids
+    
+- name: Configurer webproxy
+  hosts: localhost
+  gather_facts: no
+  module_defaults:
+    group/ansibleguy.opnsense.all:
+      firewall: '192.168.5.1'
+      api_credential_file: '/home/controleur/Bureau/Project/api-key.key'
+
+    ansibleguy.opnsense.list:
+      target: 'webproxy_general'
+  roles:
+    - proxy
+
