@@ -4,6 +4,7 @@
       - set service dhcp-server shared-network-name VLAN10 subnet 192.168.10.0/24 option default-router '{{ vlan10_ip_base }}.1'
       - set service dhcp-server shared-network-name VLAN10 subnet 192.168.10.0/24 range 0 start '{{ vlan10_ip_base }}.10'
       - set service dhcp-server shared-network-name VLAN10 subnet 192.168.10.0/24 range 0 stop '{{ vlan10_ip_base }}.200'
+      - set service dhcp-server shared-network-name VLAN20 subnet 192.168.10.0/24 subnet-id '1'
     save: true
 
 - name: Configurer DHCP pour VLAN 20
