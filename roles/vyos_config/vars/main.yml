@@ -1,0 +1,14 @@
+name_server: 8.8.8.8
+eth1_ip: 192.168.6.1/24
+eth0_ip: 192.168.5.15/24
+ssh_listen: 192.168.7.1
+
+outbound_if: eth0
+source_subnet: 192.168.7.0/24
+static_route: 192.168.5.0/24
+next_hop: 192.168.5.15
+
+vlan10_ip: 192.168.10.1/24
+vlan20_ip: 192.168.20.1/24
+vlan10_ip_base: 192.168.10
+vlan20_ip_base: 192.168.20
