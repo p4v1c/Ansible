@@ -8,7 +8,7 @@
     - vyos_config
 
 - name: Configurer firewall
-  hosts: localhost
+  hosts: opnsense
   gather_facts: no
   module_defaults:
     group/ansibleguy.opnsense.all:
@@ -26,7 +26,7 @@
     - ids
     
 - name: Configurer IDS
-  hosts: localhost
+  hosts: opnsense
   gather_facts: false
 
   module_defaults:
