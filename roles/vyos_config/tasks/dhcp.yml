@@ -1,0 +1,16 @@
+- name: Configurer DHCP pour VLAN 10
+  vyos.vyos.vyos_config:
+    lines:
+      - set service dhcp-server shared-network-name VLAN10 subnet 192.168.10.0/24 option default-router '{{ vlan10_ip_base }}.1'
+      - set service dhcp-server shared-network-name VLAN10 subnet 192.168.10.0/24 range 0 start '{{ vlan10_ip_base }}.10'
+      - set service dhcp-server shared-network-name VLAN10 subnet 192.168.10.0/24 range 0 stop '{{ vlan10_ip_base }}.200'
+    save: true
+
+- name: Configurer DHCP pour VLAN 20
+  vyos.vyos.vyos_config:
+    lines:
+      - set service dhcp-server shared-network-name VLAN20 subnet 192.168.20.0/24 option default-router '{{ vlan20_ip_base }}.1'
+      - set service dhcp-server shared-network-name VLAN20 subnet 192.168.20.0/24 range 0 start '{{ vlan20_ip_base }}.10'
+      - set service dhcp-server shared-network-name VLAN20 subnet 192.168.20.0/24 range 0 stop '{{ vlan20_ip_base }}.200'
+      - set service dhcp-server shared-network-name VLAN20 subnet 192.168.20.0/24 subnet-id '2'
+    save: true

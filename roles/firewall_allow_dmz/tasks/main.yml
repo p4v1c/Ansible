@@ -1,0 +1,17 @@
+- name: Allow all to DMZ
+  ansibleguy.opnsense.rule:
+    source_net: '192.168.4.1/24'
+    destination_net: '192.168.4.15/24'
+    destination_port: 'any'
+    protocol: 'TCP'
+    description: 'Allow all to DMZ'
+    match_fields: ['description']
+    sequence: 1
+    action: 'pass'
+    quick: true
+    interface: 'opt1'
+    direction: 'in'
+    ip_protocol: 'inet'
+    state: 'present'
+    enabled: true
+    debug: true

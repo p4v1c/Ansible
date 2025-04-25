@@ -1,0 +1,17 @@
+- name: Allow all from ADM
+  ansibleguy.opnsense.rule:
+    source_net: '192.168.7.2/24'
+    destination_net: 'any'
+    destination_port: 'any'
+    protocol: 'TCP'
+    description: 'Allow all from ADM'
+    match_fields: ['description']
+    sequence: 1
+    action: 'pass'
+    quick: true
+    interface: 'opt2'
+    direction: 'in'
+    ip_protocol: 'inet'
+    state: 'present'
+    enabled: true
+    debug: true
