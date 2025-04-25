@@ -1,0 +1,2 @@
+- name: Set up IDS/IPS
+  include_tasks: ids_config.yml

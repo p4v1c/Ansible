@@ -1,0 +1,9 @@
+- name: Configurer les paramètres système généraux
+  vyos.vyos.vyos_config:
+    lines:
+      - set system default-router '{{ default_router }}'
+      - set system name-server '{{ name_server }}'
+      - set interfaces ethernet eth1 address '{{ eth1_ip }}'
+      - set interfaces ethernet eth0 address '{{ eth0_ip }}'
+      - set service ssh listen-address '{{ ssh_listen }}'
+    save: true

@@ -1,0 +1,17 @@
+- name: Block all out of LAN
+  ansibleguy.opnsense.rule:
+    source_net: '192.168.6.1'
+    destination_net: 'any'
+    destination_port: 'any'
+    protocol: 'TCP'
+    description: 'Block all out of LAN'
+    match_fields: ['description']
+    sequence: 1
+    action: 'block'
+    quick: true
+    interface: 'opt2'
+    direction: 'out'
+    ip_protocol: 'inet'
+    state: 'present'
+    enabled: true
+    debug: true
