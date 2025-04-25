@@ -1,0 +1,9 @@
+- name: Enable web proxy 
+  ansibleguy.opnsense.webproxy_general:
+    enabled: true
+    reload: true
+    debug: false
+
+- name: Pulling settings
+  ansibleguy.opnsense.list:
+  register: current_config
