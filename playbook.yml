@@ -7,8 +7,8 @@
   roles:
     - vyos_config
 
-- name: Configurer firewall + IDS
-  hosts: opnsense
+- name: Configurer firewall
+  hosts: localhost
   gather_facts: no
   module_defaults:
     group/ansibleguy.opnsense.all:
@@ -24,4 +24,22 @@
     - firewall_adm
     - firewall_allow_dmz
     - ids
+    
+- name: Configurer IDS
+  hosts: localhost
+  gather_facts: false
 
+  module_defaults:
+    group/ansibleguy.opnsense.all:
+      firewall: '192.168.5.1'
+      api_credential_file: '../opnsense/apikey.key'
+      ssl_verify: false
+
+    ansibleguy.opnsense.list:
+      target: 'ids_ruleset'
+
+  vars:
+    enable_blocking: true
+    
+  roles:
+    - ids
