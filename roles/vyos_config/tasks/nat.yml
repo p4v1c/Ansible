@@ -1,8 +1,0 @@
-- name: Configurer la règle NAT
-  vyos.vyos.vyos_config:
-    lines:
-      - set nat source rule 100 outbound-interface name '{{ outbound_if }}'
-      - set nat source rule 100 source address '{{ source_subnet }}'
-      - set nat source rule 100 translation address masquerade
-      - set protocols static route '{{ static_route }}' next-hop '{{ next_hop }}'
-    save: true

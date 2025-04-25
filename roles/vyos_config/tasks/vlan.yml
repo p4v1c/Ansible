@@ -1,6 +1,0 @@
-- name: Créer les interfaces VLAN 10 et 20
-  vyos.vyos.vyos_config:
-    lines:
-      - set interfaces ethernet eth1 vif 10 address '{{ vlan10_ip }}'
-      - set interfaces ethernet eth1 vif 20 address '{{ vlan20_ip }}'
-    save: true
